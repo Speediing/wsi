@@ -21,7 +21,7 @@ export default async function Component() {
         <p className="line-clamp-2 sm:line-clamp-1">
           Zero interest promo financing* on purchases of $750 or more.{" "}
           <a href="/" className="underline">
-            Learn More {sale}
+            Learn More {`${sale.valueOf()}`}
           </a>
         </p>
       </div>
