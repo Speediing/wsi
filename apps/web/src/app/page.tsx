@@ -1,138 +1,291 @@
-import Image from "next/image";
-import { Card } from "@repo/ui/card";
+import { Search, User, Package, Heart, ShoppingCart, ChevronRight, Instagram, Facebook, Youtube } from 'lucide-react'
 
-function Gradient({
-  conic,
-  className,
-  small,
-}: {
-  small?: boolean;
-  conic?: boolean;
-  className?: string;
-}): JSX.Element {
+export default function Component() {
   return (
-    <span
-      className={`absolute mix-blend-normal will-change-[filter] rounded-[100%] ${
-        small ? "blur-[32px]" : "blur-[75px]"
-      } ${conic ? "bg-glow-conic" : ""} ${className}`}
-    />
-  );
-}
-
-const LINKS = [
-  {
-    title: "Docs",
-    href: "https://turbo.build/repo/docs",
-    description: "Find in-depth information about Turborepo features and API.",
-  },
-  {
-    title: "Learn",
-    href: "https://turbo.build/repo/docs/handbook",
-    description: "Learn more about monorepos with our handbook.",
-  },
-  {
-    title: "Templates",
-    href: "https://turbo.build/repo/docs/getting-started/from-example",
-    description: "Choose from over 15 examples and deploy with a single click.",
-  },
-  {
-    title: "Deploy",
-    href: "https://vercel.com/new",
-    description:
-      "Instantly deploy your Turborepo to a shareable URL with Vercel.",
-  },
-];
-
-export default function Page(): JSX.Element {
-  return (
-    <main className="flex flex-col items-center justify-between min-h-screen p-24">
-      <div className="z-10 items-center justify-between w-full max-w-5xl font-mono text-sm lg:flex">
-        <p className="fixed top-0 left-0 flex justify-center w-full px-4 pt-8 pb-6 border-b bg-gradient-to-b backdrop-blur-2xl border-neutral-800 bg-zinc-800/30 from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:bg-zinc-800/30">
-          examples/with-tailwind -&nbsp;
-          <code className="font-mono font-bold">web</code>
+    <div className="min-h-screen bg-white">
+      {/* Top banner */}
+      <div className="bg-gray-600 text-white text-center py-2 text-xs sm:text-sm px-4">
+        <p className="line-clamp-2 sm:line-clamp-1">
+          Zero interest promo financing* on purchases of $750 or more. <a href="#" className="underline">Learn More</a>
         </p>
-        <div className="fixed bottom-0 left-0 flex items-end justify-center w-full h-48 bg-gradient-to-t from-black via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="flex gap-2 p-8 pointer-events-none place-items-center lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-turbo&utm_medium=basic&utm_campaign=create-turbo"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            By{" "}
-            <Image
-              alt="Vercel Logo"
-              className="invert"
-              height={24}
-              priority
-              src="/vercel.svg"
-              width={100}
+      </div>
+
+{/* Desktop Navigation */}
+<nav className="hidden lg:block border-b">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <div className="w-1/4">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="w-full border border-gray-300 rounded-sm py-2 pl-3 pr-10 text-sm"
+                />
+                <button className="absolute right-0 top-0 h-full px-3 flex items-center bg-gray-100 rounded-r-sm border-l border-gray-300">
+                  <Search className="text-gray-500" size={18} />
+                </button>
+              </div>
+            </div>
+            <h1 className="text-4xl font-serif tracking-wider text-center flex-1">REJUVENATION</h1>
+            <div className="w-1/4 flex justify-end space-x-6">
+              <a href="#" className="flex flex-col items-center text-xs">
+                <User size={20} className="mb-1" />
+                <span>Account</span>
+              </a>
+              <a href="#" className="flex flex-col items-center text-xs">
+                <Package size={20} className="mb-1" />
+                <span>Track Order</span>
+              </a>
+              <a href="#" className="flex flex-col items-center text-xs">
+                <Heart size={20} className="mb-1" />
+                <span>Favorites</span>
+              </a>
+              <a href="#" className="flex flex-col items-center text-xs">
+                <ShoppingCart size={20} className="mb-1" />
+                <span>Cart (0)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile Header (unchanged) */}
+      <header className="lg:hidden flex justify-between items-center px-4 py-3 border-b">
+        <button className="text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <h1 className="text-2xl font-serif tracking-wider">REJUVENATION</h1>
+        <div className="flex space-x-4">
+          <button className="text-gray-700">
+            <Search size={24} />
+          </button>
+          <button className="text-gray-700">
+            <Heart size={24} />
+          </button>
+          <button className="text-gray-700">
+            <ShoppingCart size={24} />
+          </button>
+        </div>
+      </header>
+
+      {/* Navigation */}
+      <nav className="border-t border-b overflow-x-auto">
+        <ul className="flex justify-start sm:justify-center space-x-6 py-4 text-sm px-4 sm:px-0 whitespace-nowrap">
+          <li><a href="#" className="hover:underline">New & Featured</a></li>
+          <li><a href="#" className="hover:underline">Shop Rooms</a></li>
+          <li><a href="#" className="hover:underline">Project Guides</a></li>
+          <li><a href="#" className="hover:underline">Free Design Services</a></li>
+          <li><a href="#" className="hover:underline">Contract Grade</a></li>
+        </ul>
+      </nav>
+
+      {/* Category Navigation */}
+      <div className="bg-gray-100 overflow-x-auto">
+        <ul className="flex justify-start sm:justify-center space-x-6 py-4 text-sm px-4 sm:px-0 whitespace-nowrap">
+          <li><a href="#" className="hover:underline">Lighting & Fans</a></li>
+          <li><a href="#" className="hover:underline">Hardware</a></li>
+          <li><a href="#" className="hover:underline">Furniture</a></li>
+          <li><a href="#" className="hover:underline">Outdoor</a></li>
+          <li><a href="#" className="hover:underline">Mirrors</a></li>
+          <li><a href="#" className="hover:underline">Rugs</a></li>
+          <li><a href="#" className="hover:underline">Bedding & Decor</a></li>
+          <li><a href="#" className="hover:underline">Kitchen</a></li>
+          <li><a href="#" className="hover:underline">Bath</a></li>
+          <li><a href="#" className="hover:underline">Organization</a></li>
+          <li><a href="#" className="hover:underline">Vintage</a></li>
+          <li><a href="#" className="text-red-500 hover:underline">Sale</a></li>
+        </ul>
+      </div>
+
+      {/* Promotional Banners */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 text-center">
+        <div className="bg-gray-700 text-white py-4 px-2">
+          <h3 className="font-bold text-sm sm:text-base">Fall Savings Up to 40% Off</h3>
+          <p className="text-xs sm:text-sm">Shop Lighting, Furniture & More <ChevronRight className="inline" size={16} /></p>
+        </div>
+        <div className="bg-gray-700 text-white py-4 px-2">
+          <h3 className="font-bold text-sm sm:text-base">New Arrivals Are Here</h3>
+          <p className="text-xs sm:text-sm">Shop Now <ChevronRight className="inline" size={16} /></p>
+        </div>
+        <div className="bg-gray-700 text-white py-4 px-2">
+          <h3 className="font-bold text-sm sm:text-base">Free Shipping on 100s of Items</h3>
+          <p className="text-xs sm:text-sm">Shop Now <ChevronRight className="inline" size={16} /></p>
+        </div>
+        <div className="bg-gray-700 text-white py-4 px-2">
+          <h3 className="font-bold text-sm sm:text-base">In-Stock and Quick Ship Furniture</h3>
+          <p className="text-xs sm:text-sm">Delivered in 1-5 Weeks <ChevronRight className="inline" size={16} /></p>
+        </div>
+      </div>
+
+      {/* Hero Image */}
+      <div className="w-full relative overflow-hidden mt-[-70px]" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
+        <iframe 
+          src="https://player.vimeo.com/video/1008632929?h=6c7d65625d&background=1" 
+          title="Living room with sectional sofa"
+          className="w-full h-[56.25vw]"
+          style={{ maxHeight: '100vh' }}
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+
+      {/* New & Featured Section */}
+      <section className="container mx-auto px-4 py-12">
+      <h2 className="text-4xl font-serif mb-2 text-gray-800">New & Featured</h2>
+      <p className="text-lg mb-6 text-gray-600">
+        Shop our latest designs—thoughtfully made to complete every room in your home.
+      </p>
+      <hr className="mb-8 border-gray-300" />
+      <div className="relative">
+        <div className="flex space-x-6 overflow-x-auto pb-6 scrollbar-hide">
+          <div className="flex-none w-72">
+            <img 
+              src="/placeholder.svg?height=300&width=300" 
+              alt="Chandelier" 
+              className="w-full h-72 object-cover mb-4"
             />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center ">
-        <div className="font-sans w-auto pb-16 pt-[48px] md:pb-24 lg:pb-32 md:pt-16 lg:pt-20 flex justify-between gap-8 items-center flex-col relative z-0">
-          <div className="z-50 flex items-center justify-center w-full">
-            <div className="absolute min-w-[614px] min-h-[614px]">
-              <Image
-                alt="Turborepo"
-                height={614}
-                src="circles.svg"
-                width={614}
-              />
-            </div>
-            <div className="absolute z-50 flex items-center justify-center w-64 h-64">
-              <Gradient
-                className="opacity-90 w-[120px] h-[120px]"
-                conic
-                small
-              />
-            </div>
-
-            <div className="w-[120px] h-[120px] z-50">
-              <Image
-                alt=""
-                height={120}
-                priority
-                src="turborepo.svg"
-                width={120}
-              />
-            </div>
+            <a href="#" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+              CHANDELIERS <ChevronRight size={16} className="ml-1" />
+            </a>
+            <p className="text-sm text-gray-600 italic">New Fairvale Chandelier</p>
           </div>
-          <Gradient
-            className="top-[-500px] opacity-[0.15] w-[1000px] h-[1000px]"
-            conic
-          />
-          <div className="z-50 flex flex-col items-center justify-center gap-5 px-6 text-center lg:gap-6">
-            <svg
-              className="w-[160px] md:w-[200px] fill-white"
-              viewBox="0 0 506 50"
-              width={200}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Turborepo logo</title>
-              <path d="M53.7187 12.0038V1.05332H0.945312V12.0038H20.8673V48.4175H33.7968V12.0038H53.7187Z" />
-              <path d="M83.5362 49.1431C99.764 49.1431 108.67 40.8972 108.67 27.3081V1.05332H95.7401V26.0547C95.7401 33.6409 91.7821 37.9287 83.5362 37.9287C75.2904 37.9287 71.3324 33.6409 71.3324 26.0547V1.05332H58.4029V27.3081C58.4029 40.8972 67.3084 49.1431 83.5362 49.1431Z" />
-              <path d="M128.462 32.7174H141.325L151.484 48.4175H166.327L154.848 31.3321C161.313 29.0232 165.271 23.8778 165.271 16.8853C165.271 6.72646 157.685 1.05332 146.141 1.05332H115.532V48.4175H128.462V32.7174ZM128.462 22.4925V11.8719H145.481C150.033 11.8719 152.54 13.8509 152.54 17.2152C152.54 20.3816 150.033 22.4925 145.481 22.4925H128.462Z" />
-              <path d="M171.287 48.4175H205.128C215.683 48.4175 221.752 43.404 221.752 35.0262C221.752 29.419 218.189 25.593 213.967 23.8778C216.87 22.4925 220.432 19.1942 220.432 13.9828C220.432 5.60502 214.495 1.05332 204.006 1.05332H171.287V48.4175ZM183.689 19.59V11.542H202.687C206.249 11.542 208.228 12.9273 208.228 15.566C208.228 18.2047 206.249 19.59 202.687 19.59H183.689ZM183.689 29.2871H203.875C207.371 29.2871 209.284 31.0022 209.284 33.5749C209.284 36.1476 207.371 37.8628 203.875 37.8628H183.689V29.2871Z" />
-              <path d="M253.364 0.261719C236.806 0.261719 224.866 10.6185 224.866 24.7354C224.866 38.8523 236.806 49.2091 253.364 49.2091C269.922 49.2091 281.796 38.8523 281.796 24.7354C281.796 10.6185 269.922 0.261719 253.364 0.261719ZM253.364 11.4761C262.072 11.4761 268.602 16.6215 268.602 24.7354C268.602 32.8493 262.072 37.9947 253.364 37.9947C244.656 37.9947 238.126 32.8493 238.126 24.7354C238.126 16.6215 244.656 11.4761 253.364 11.4761Z" />
-              <path d="M300.429 32.7174H313.292L323.451 48.4175H338.294L326.815 31.3321C333.28 29.0232 337.238 23.8778 337.238 16.8853C337.238 6.72646 329.652 1.05332 318.108 1.05332H287.499V48.4175H300.429V32.7174ZM300.429 22.4925V11.8719H317.448C322 11.8719 324.507 13.8509 324.507 17.2152C324.507 20.3816 322 22.4925 317.448 22.4925H300.429Z" />
-              <path d="M343.254 1.05332V48.4175H389.299V37.467H355.92V29.7489H385.539V19.0622H355.92V12.0038H389.299V1.05332H343.254Z" />
-              <path d="M408.46 33.3111H425.677C437.221 33.3111 444.807 27.7699 444.807 17.2152C444.807 6.59453 437.221 1.05332 425.677 1.05332H395.53V48.4175H408.46V33.3111ZM408.46 22.5585V11.8719H424.951C429.569 11.8719 432.076 13.8509 432.076 17.2152C432.076 20.5135 429.569 22.5585 424.951 22.5585H408.46Z" />
-              <path d="M476.899 0.261719C460.341 0.261719 448.401 10.6185 448.401 24.7354C448.401 38.8523 460.341 49.2091 476.899 49.2091C493.456 49.2091 505.33 38.8523 505.33 24.7354C505.33 10.6185 493.456 0.261719 476.899 0.261719ZM476.899 11.4761C485.606 11.4761 492.137 16.6215 492.137 24.7354C492.137 32.8493 485.606 37.9947 476.899 37.9947C468.191 37.9947 461.66 32.8493 461.66 24.7354C461.66 16.6215 468.191 11.4761 476.899 11.4761Z" />
-            </svg>
+          <div className="flex-none w-72">
+            <img 
+              src="/placeholder.svg?height=300&width=300" 
+              alt="Bath Vanity" 
+              className="w-full h-72 object-cover mb-4"
+            />
+            <a href="#" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+              BATH VANITIES <ChevronRight size={16} className="ml-1" />
+            </a>
+            <p className="text-sm text-gray-600 italic">New Theodora Vanity</p>
+          </div>
+          <div className="flex-none w-72">
+            <img 
+              src="/placeholder.svg?height=300&width=300" 
+              alt="Armchair" 
+              className="w-full h-72 object-cover mb-4"
+            />
+            <a href="#" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+              IN-STOCK FURNITURE <ChevronRight size={16} className="ml-1" />
+            </a>
+            <p className="text-sm text-gray-600 italic">Delivers Within 5 Weeks</p>
+          </div>
+          <div className="flex-none w-72">
+            <img 
+              src="/placeholder.svg?height=300&width=300" 
+              alt="Rug" 
+              className="w-full h-72 object-cover mb-4"
+            />
+            <a href="#" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+              RUGS <ChevronRight size={16} className="ml-1" />
+            </a>
+            <p className="text-sm text-gray-600 italic">New Arrivals</p>
           </div>
         </div>
+        <div className="absolute right-0 top-0 bottom-6 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+        <button className="absolute right-2 top-[calc(50%-1.5rem)] transform -translate-y-1/2 bg-white rounded-full p-2  z-10 focus:outline-none">
+          <ChevronRight size={24} className="text-gray-600" />
+        </button>
       </div>
+    </section>
 
-      <div className="grid mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        {LINKS.map(({ title, href, description }) => (
-          <Card href={href} key={title} title={title}>
-            {description}
-          </Card>
-        ))}
+      {/* Footer */}
+      <footer className="bg-gray-100 py-8 sm:py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+              <h3 className="font-bold mb-4">CUSTOMER SERVICE</h3>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="hover:underline">Contact Us</a></li>
+                <li><a href="#" className="hover:underline">Track Your Order</a></li>
+                <li><a href="#" className="hover:underline">Returns & Exchanges</a></li>
+                <li><a href="#" className="hover:underline">Shipping Information</a></li>
+                <li><a href="#" className="hover:underline">Sign Up for Email and Text Updates</a></li>
+                <li><a href="#" className="hover:underline">Site Map</a></li>
+                <li><a href="#" className="hover:underline">Do Not Sell or Share My Personal Information</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold mb-4">BUSINESS TO BUSINESS</h3>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="hover:underline">Overview</a></li>
+                <li><a href="#" className="hover:underline">Trade</a></li>
+                <li><a href="#" className="hover:underline">Contract</a></li>
+              </ul>
+              <h3 className="font-bold mt-6 mb-4">DESIGN CREW</h3>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="hover:underline">Free Design Appointments</a></li>
+                <li><a href="#" className="hover:underline">Book an Appointment</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold mb-4">RESOURCES</h3>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="hover:underline">Gift Cards</a></li>
+                <li>
+                  <a href="#" className="hover:underline">View Online Catalog</a>
+                </li>
+                <li><a href="#" className="hover:underline">Our Blog</a></li>
+              </ul>
+              <h3 className="font-bold mt-6 mb-4">THE KEY REWARDS + CARD</h3>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="hover:underline">Credit Card</a></li>
+                <li><a href="#" className="hover:underline">Manage My Credit Card</a></li>
+                <li><a href="#" className="hover:underline">The Key Rewards</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold mb-4">SIGN UP FOR EMAILS</h3>
+              <p className="text-sm mb-4">Sign up to hear about our latest sales, new arrivals & more.</p>
+              <form className="flex mb-4">
+                <input type="email" placeholder="Enter your email" className="flex-grow border p-2 text-sm" />
+                <button type="submit" className="bg-black text-white p-2 text-sm">
+                  <ChevronRight size={16} />
+                </button>
+              </form>
+              <p className="text-xs mb-4">
+                California residents: can request <a href="#" className="underline">Do Not Sell or Share My Personal Information</a>
+              </p>
+              <p className="text-xs mb-4">
+                Please visit our <a href="#" className="underline">privacy policy</a> to learn how we can use your information.
+              </p>
+              <h3 className="font-bold mb-4">ABOUT US</h3>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="hover:underline">Our Factory</a></li>
+                <li><a href="#" className="hover:underline">Our Commitments</a></li>
+                <li><a href="#" className="hover:underline">Careers</a></li>
+                <li><a href="#" className="hover:underline">Find A Store</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex justify-center space-x-4 mt-8">
+            <a href="#" className="text-gray-600 hover:text-black"><Instagram size={24} /></a>
+            <a href="#" className="text-gray-600 hover:text-black"><Facebook size={24} /></a>
+            <a href="#" className="text-gray-600 hover:text-black"><Youtube size={24} /></a>
+          </div>
+          <div className="text-center text-xs mt-8">
+            <p>© 2024 Williams-Sonoma, Inc. All Rights Reserved</p>
+            <p className="mt-2">
+              <a href="#" className="underline">Terms & Conditions</a> | <a href="#" className="underline">Accessibility</a> | <a href="#" className="underline">Privacy Policy</a> | <a href="#" className="underline">Legal Statement</a>
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Floating Design Question Box */}
+      <div className="fixed bottom-4 right-4 bg-white border rounded-lg shadow-lg p-4 flex items-center space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+        <div>
+          <p className="font-bold">Design Question?</p>
+          <p className="text-xs">START A FREE DESIGN CHAT ›</p>
+        </div>
       </div>
-    </main>
-  );
+    </div>
+  )
 }
