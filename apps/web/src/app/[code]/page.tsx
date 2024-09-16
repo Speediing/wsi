@@ -18,14 +18,16 @@ export default async function Page({ params }: { params: { code: string } }) {
   return (
     <div className="min-h-screen bg-white">
       {/* Top banner */}
-      <div className="bg-gray-600 text-white text-center py-2 text-xs sm:text-sm px-4">
-        <p className="line-clamp-2 sm:line-clamp-1">
-          Zero interest promo financing* on purchases of $750 or more.{" "}
-          <a href="/" className="underline">
-            Learn More {`${summerSale.valueOf()} ${banner.valueOf()} `}
-          </a>
-        </p>
-      </div>
+      {banner && (
+        <div className="bg-gray-600 text-white text-center py-2 text-xs sm:text-sm px-4">
+          <p className="line-clamp-2 sm:line-clamp-1">
+            Zero interest promo financing* on purchases of $750 or more.{" "}
+            <a href="/" className="underline">
+              Learn More
+            </a>
+          </p>
+        </div>
+      )}
 
       {/* Desktop Navigation */}
       <nav className="hidden lg:block border-b">
@@ -198,41 +200,44 @@ export default async function Page({ params }: { params: { code: string } }) {
       </div>
 
       {/* Promotional Banners */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 text-center">
-        <div className="bg-gray-700 text-white py-4 px-2">
-          <h3 className="font-bold text-sm sm:text-base">
-            Fall Savings Up to 40% Off
-          </h3>
-          <p className="text-xs sm:text-sm">
-            Shop Lighting, Furniture & More{" "}
-            <ChevronRight className="inline" size={16} />
-          </p>
+      {summerSale && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 text-center">
+          <div className="bg-gray-700 text-white py-4 px-2">
+            <h3 className="font-bold text-sm sm:text-base">
+              Fall Savings Up to 40% Off
+            </h3>
+            <p className="text-xs sm:text-sm">
+              Shop Lighting, Furniture & More{" "}
+              <ChevronRight className="inline" size={16} />
+            </p>
+          </div>
+          <div className="bg-gray-700 text-white py-4 px-2">
+            <h3 className="font-bold text-sm sm:text-base">
+              New Arrivals Are Here
+            </h3>
+            <p className="text-xs sm:text-sm">
+              Shop Now <ChevronRight className="inline" size={16} />
+            </p>
+          </div>
+          <div className="bg-gray-700 text-white py-4 px-2">
+            <h3 className="font-bold text-sm sm:text-base">
+              Free Shipping on 100s of Items
+            </h3>
+            <p className="text-xs sm:text-sm">
+              Shop Now <ChevronRight className="inline" size={16} />
+            </p>
+          </div>
+          <div className="bg-gray-700 text-white py-4 px-2">
+            <h3 className="font-bold text-sm sm:text-base">
+              In-Stock and Quick Ship Furniture
+            </h3>
+            <p className="text-xs sm:text-sm">
+              Delivered in 1-5 Weeks{" "}
+              <ChevronRight className="inline" size={16} />
+            </p>
+          </div>
         </div>
-        <div className="bg-gray-700 text-white py-4 px-2">
-          <h3 className="font-bold text-sm sm:text-base">
-            New Arrivals Are Here
-          </h3>
-          <p className="text-xs sm:text-sm">
-            Shop Now <ChevronRight className="inline" size={16} />
-          </p>
-        </div>
-        <div className="bg-gray-700 text-white py-4 px-2">
-          <h3 className="font-bold text-sm sm:text-base">
-            Free Shipping on 100s of Items
-          </h3>
-          <p className="text-xs sm:text-sm">
-            Shop Now <ChevronRight className="inline" size={16} />
-          </p>
-        </div>
-        <div className="bg-gray-700 text-white py-4 px-2">
-          <h3 className="font-bold text-sm sm:text-base">
-            In-Stock and Quick Ship Furniture
-          </h3>
-          <p className="text-xs sm:text-sm">
-            Delivered in 1-5 Weeks <ChevronRight className="inline" size={16} />
-          </p>
-        </div>
-      </div>
+      )}
 
       {/* Hero Image */}
       <div
