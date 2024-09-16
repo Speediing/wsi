@@ -15,6 +15,14 @@ export async function GET(request: NextRequest) {
           { value: true, label: "On" },
         ],
       },
+      banner: {
+        description: "Controls whether the new feature is visible",
+        origin: "https://example.com/#new-feature",
+        options: [
+          { value: false, label: "Off" },
+          { value: true, label: "On" },
+        ],
+      },
     },
   });
 }
