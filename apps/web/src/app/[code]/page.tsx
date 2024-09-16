@@ -11,6 +11,16 @@ import {
 } from "lucide-react";
 import { marketingFlags, showSummerSale, showBanner } from "../flags";
 
+import { Playfair_Display } from "next/font/google";
+import { Suspense } from "react";
+export const experimental_ppr = true;
+const playfair = Playfair_Display({ subsets: ["latin"] });
+
+const Account = async () => {
+  await new Promise((r) => setTimeout(r, 2000));
+  return <span>Jason's Account</span>;
+};
+
 export default async function Page({ params }: { params: { code: string } }) {
   const summerSale = await showSummerSale(params.code, marketingFlags);
   const banner = await showBanner(params.code, marketingFlags);
@@ -45,23 +55,51 @@ export default async function Page({ params }: { params: { code: string } }) {
                 </button>
               </div>
             </div>
-            <h1 className="text-4xl font-serif tracking-wider text-center flex-1">
-              REJUVENATION
+            <h1
+              className={`${playfair.className} font-semibold text-4xl font-serif tracking-wider text-center flex-1`}
+            >
+              <svg
+                data-style="rj-logo"
+                width="250"
+                height="35.25"
+                viewBox="0 0 500 70.5"
+                xmlns="http://www.w3.org/2000/svg"
+                className="mx-auto"
+              >
+                <title>Rejuvenation</title>
+                <g fill="#1A1818" fill-rule="evenodd">
+                  <path d="M67.9 29.7h-1.2c.1-2.2-1.2-4.2-3.2-5H60.1v31.6c.8.2 1.6.3 2.4.3 4 0 6.6-3.7 6.6-11.4h1.2v14.9h-21v-.8c2.6-.4 2.6-4.6 2.6-6.8V8.6c0-2.2 0-6.5-2.6-6.8v-.7h21v12.6h-1.2c0-2.9-.3-9.4-6.6-9.4-.8-.1-1.6.1-2.4.5v16.7h3.4c1.8-.5 3.1-2.1 3.2-3.9h1.2m153 42.4v-.7c2.6-.4 2.6-4.6 2.6-6.8V8.6c0-2.2 0-6.5-2.6-6.8v-.7H242v12.6h-1.2c0-2.9-.3-9.4-6.6-9.4-.8-.1-1.6.1-2.4.5v16.7h3.4c1.8-.5 3.1-2.1 3.2-3.9h1.2v12h-1c.1-2.2-1.2-4.2-3.2-5H232.1v31.6c.8.2 1.6.3 2.4.3 4 0 6.6-3.7 6.6-11.4h1.2V60h-21.4zm223.8-2c-2.3 0-4.4-11-4.4-27.4s2.1-27.4 4.4-27.4 4.4 11.5 4.4 27.4S447 58 444.7 58m0-58c-6.7 0-13.5 9.5-13.5 30.6 0 17.2 6.8 30.6 13.5 30.6s13.5-13.4 13.5-30.6C458.1 9.5 451.3 0 444.7 0m-44.2 60.1v-.8c2.6-.4 2.6-4.6 2.6-6.8V8.7c0-2.2 0-6.5-2.6-6.8v-.8H414v.7c-2.6.4-2.6 4.6-2.6 6.8v43.8c0 2.2 0 6.5 2.6 6.8v.7l-13.5.2zm93.9-51.4c0-2.2 0-6.5-2.6-6.8v-.8h8.2v.7c-2.6.4-2.6 4.6-2.6 6.8v52.6h-.7l-15.8-48.9v40.1c0 2.2 0 6.5 2.6 6.9v.7h-8.2v-.7c2.6-.4 2.6-4.6 2.6-6.9V8.6c0-2.2 0-6.5-2.6-6.8v-.7h10.5l8.6 26.5V8.7zm-208.8 0c0-2.2 0-6.5-2.6-6.8v-.8h8.2v.7c-2.6.4-2.6 4.6-2.6 6.8v52.6h-.7l-15.8-48.9v40.1c0 2.2 0 6.5 2.6 6.9v.7h-8.2v-.7c2.6-.4 2.6-4.6 2.6-6.9V8.6c0-2.2 0-6.5-2.6-6.8v-.7H277l8.6 26.5V8.7zm78.2-4.2s-7.3-1.8-7.3 11.7h-1.2V1.1h25.2v15h-1.2c0-13.5-7.3-11.7-7.3-11.7v48c0 2.2 0 6.5 2.6 6.9v.7h-13.4v-.7c2.6-.4 2.6-4.6 2.6-6.9V4.5zM140.8 49c0 4.1 1.2 7.5 4.6 7.5s4.6-3.4 4.6-7.5V8.7c0-2.2 0-6.5-2.6-6.8v-.8h8.2v.7c-2.6.5-2.6 4.7-2.6 6.9v40.8c0 6.5-3.8 11.7-10.2 11.7-6.5 0-10.2-5.2-10.2-11.7V8.7c0-2.2 0-6.5-2.6-6.8v-.8h13.4v.7c-2.6.4-2.6 4.6-2.6 6.8V49zm48-47.9v.7c-1.4.1-2.5 1.2-2.6 2.6-.1.9-.1 1.9 0 2.8l4.9 38 4.9-38c.1-.9.1-1.9 0-2.8-.1-1.4-1.2-2.5-2.6-2.6v-.7h8.9v.7c-2.6 0-3.2 4.2-3.4 6.3v.5L192.1 60h-7.2s-4.9-36.6-6.3-49.1l-.3-2.2v-.5c-.3-2.2-.8-6.4-3.4-6.3v-.8h13.9zm133.1 7 2.7 16.6h-5l2.3-16.6zm6.5-7h-9.7v.7c1.4 0-1.5 18.7-1.5 18.7l-.5 3.2-4.2 29.3c-.3 2.2-.9 6.4-3.5 6.3v.7h8.9v-.7c-1.4-.1-2.5-1.3-2.5-2.6-.1-.9-.1-1.9 0-2.8l3.8-26.3h5.9l4.4 26.2c.2.9.2 1.9.2 2.8 0 1.4-1.1 2.5-2.4 2.6v.8h14.3v-.7c-2.6 0-3.4-4.2-3.8-6.3l-9.4-51.9zm-314.7 15c-.9.6-1.9 1-2.9 1.3V4.9c1-.1 2.1-.1 3.1 0 1.2.1 2.2.8 2.8 1.8.4.6.6 1.3.7 2 .1.7.1 1.5 0 2.2-.2 1.1-.6 2.2-1.3 3.1-.6.8-1.4 1.5-2.4 2.1m-11 7.5v28.8c0 2.2 0 6.5-2.6 6.8v.8h13.4v-.7c-2.6-.4-2.6-4.6-2.6-6.8V22.2c1.4.7 2.3 3.6 2.7 5.3.2.8.3 1.4.3 1.4 1.4 8.3 4.2 24.8 4.3 25.1 2.9 17.3 15.2 17.3 19.5 16v-.9c-3.4.7-8.6-3.4-11-15.3L21.3 26c-.7-3.1-3.2-5.5-6.3-5.9-.4 0-.7 0-.8-.1 3.1-1.1 5.9-2.7 8.5-4.8 2.7-2.5 3.6-6.3 2.2-9.7-.9-2.1-2.7-3.6-4.9-4.1-1.3-.2-2.5-.3-3.8-.3H0v.7c2.6.4 2.6 4.6 2.6 6.8V20M106 8.6c0-2.2 0-6.3 2.6-6.7v-.8H95.3v.7c2.6.4 2.6 4.6 2.6 6.7v45.2c0 10.7-5 15.9-7.6 15.9v.8c4.2 0 15.7-2.4 15.7-17.2V8.6z"></path>
+                </g>
+              </svg>
             </h1>
-            <div className="w-1/4 flex justify-end space-x-6">
-              <a href="/" className="flex flex-col items-center text-xs">
+            <div className="w-1/4 flex justify-center space-x-6">
+              <a
+                href="/"
+                className="flex flex-col items-center text-xs w-16 text-center"
+              >
                 <User size={20} className="mb-1" />
-                <span>Account</span>
+                <Suspense fallback={<span>Loading</span>}>
+                  <Account />
+                </Suspense>
               </a>
-              <a href="/" className="flex flex-col items-center text-xs">
+              <a
+                href="/"
+                className="flex flex-col items-center text-xs w-16 text-center"
+              >
                 <Package size={20} className="mb-1" />
                 <span>Track Order</span>
               </a>
-              <a href="/" className="flex flex-col items-center text-xs">
+              <a
+                href="/"
+                className="flex flex-col items-center text-xs w-16 text-center"
+              >
                 <Heart size={20} className="mb-1" />
                 <span>Favorites</span>
               </a>
-              <a href="/" className="flex flex-col items-center text-xs">
+              <a
+                href="/"
+                className="flex flex-col items-center text-xs w-16 text-center"
+              >
                 <ShoppingCart size={20} className="mb-1" />
                 <span>Cart (0)</span>
               </a>
