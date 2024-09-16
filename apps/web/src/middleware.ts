@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { unstable_precompute as precompute } from "@vercel/flags/next";
-import { marketingFlags } from "./src/app/flags";
+import { marketingFlags } from "./app/flags";
 
 // Note that we're running this middleware for / only, but
 // you could extend it to further pages you're experimenting on
