@@ -13,7 +13,7 @@ import { showSummerSale } from "./flags";
 
 export default async function Component() {
   const sale = await showSummerSale();
-  console.log(sale);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Top banner */}
