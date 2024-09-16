@@ -6,7 +6,7 @@ export default function Component() {
       {/* Top banner */}
       <div className="bg-gray-600 text-white text-center py-2 text-xs sm:text-sm px-4">
         <p className="line-clamp-2 sm:line-clamp-1">
-          Zero interest promo financing* on purchases of $750 or more. <a href="#" className="underline">Learn More</a>
+          Zero interest promo financing* on purchases of $750 or more. <a href="/" className="underline">Learn More</a>
         </p>
       </div>
 
@@ -28,19 +28,19 @@ export default function Component() {
             </div>
             <h1 className="text-4xl font-serif tracking-wider text-center flex-1">REJUVENATION</h1>
             <div className="w-1/4 flex justify-end space-x-6">
-              <a href="#" className="flex flex-col items-center text-xs">
+              <a href="/" className="flex flex-col items-center text-xs">
                 <User size={20} className="mb-1" />
                 <span>Account</span>
               </a>
-              <a href="#" className="flex flex-col items-center text-xs">
+              <a href="/" className="flex flex-col items-center text-xs">
                 <Package size={20} className="mb-1" />
                 <span>Track Order</span>
               </a>
-              <a href="#" className="flex flex-col items-center text-xs">
+              <a href="/" className="flex flex-col items-center text-xs">
                 <Heart size={20} className="mb-1" />
                 <span>Favorites</span>
               </a>
-              <a href="#" className="flex flex-col items-center text-xs">
+              <a href="/" className="flex flex-col items-center text-xs">
                 <ShoppingCart size={20} className="mb-1" />
                 <span>Cart (0)</span>
               </a>
@@ -73,29 +73,29 @@ export default function Component() {
       {/* Navigation */}
       <nav className="border-t border-b overflow-x-auto">
         <ul className="flex justify-start sm:justify-center space-x-6 py-4 text-sm px-4 sm:px-0 whitespace-nowrap">
-          <li><a href="#" className="hover:underline">New & Featured</a></li>
-          <li><a href="#" className="hover:underline">Shop Rooms</a></li>
-          <li><a href="#" className="hover:underline">Project Guides</a></li>
-          <li><a href="#" className="hover:underline">Free Design Services</a></li>
-          <li><a href="#" className="hover:underline">Contract Grade</a></li>
+          <li><a href="/" className="hover:underline">New & Featured</a></li>
+          <li><a href="/" className="hover:underline">Shop Rooms</a></li>
+          <li><a href="/" className="hover:underline">Project Guides</a></li>
+          <li><a href="/" className="hover:underline">Free Design Services</a></li>
+          <li><a href="/" className="hover:underline">Contract Grade</a></li>
         </ul>
       </nav>
 
       {/* Category Navigation */}
       <div className="bg-gray-100 overflow-x-auto">
         <ul className="flex justify-start sm:justify-center space-x-6 py-4 text-sm px-4 sm:px-0 whitespace-nowrap">
-          <li><a href="#" className="hover:underline">Lighting & Fans</a></li>
-          <li><a href="#" className="hover:underline">Hardware</a></li>
-          <li><a href="#" className="hover:underline">Furniture</a></li>
-          <li><a href="#" className="hover:underline">Outdoor</a></li>
-          <li><a href="#" className="hover:underline">Mirrors</a></li>
-          <li><a href="#" className="hover:underline">Rugs</a></li>
-          <li><a href="#" className="hover:underline">Bedding & Decor</a></li>
-          <li><a href="#" className="hover:underline">Kitchen</a></li>
-          <li><a href="#" className="hover:underline">Bath</a></li>
-          <li><a href="#" className="hover:underline">Organization</a></li>
-          <li><a href="#" className="hover:underline">Vintage</a></li>
-          <li><a href="#" className="text-red-500 hover:underline">Sale</a></li>
+          <li><a href="/" className="hover:underline">Lighting & Fans</a></li>
+          <li><a href="/" className="hover:underline">Hardware</a></li>
+          <li><a href="/" className="hover:underline">Furniture</a></li>
+          <li><a href="/" className="hover:underline">Outdoor</a></li>
+          <li><a href="/" className="hover:underline">Mirrors</a></li>
+          <li><a href="/" className="hover:underline">Rugs</a></li>
+          <li><a href="/" className="hover:underline">Bedding & Decor</a></li>
+          <li><a href="/" className="hover:underline">Kitchen</a></li>
+          <li><a href="/" className="hover:underline">Bath</a></li>
+          <li><a href="/" className="hover:underline">Organization</a></li>
+          <li><a href="/" className="hover:underline">Vintage</a></li>
+          <li><a href="/" className="text-red-500 hover:underline">Sale</a></li>
         </ul>
       </div>
 
@@ -147,7 +147,7 @@ export default function Component() {
               alt="Chandelier" 
               className="w-full h-72 object-cover mb-4"
             />
-            <a href="#" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+            <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
               CHANDELIERS <ChevronRight size={16} className="ml-1" />
             </a>
             <p className="text-sm text-gray-600 italic">New Fairvale Chandelier</p>
@@ -158,7 +158,7 @@ export default function Component() {
               alt="Bath Vanity" 
               className="w-full h-72 object-cover mb-4"
             />
-            <a href="#" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+            <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
               BATH VANITIES <ChevronRight size={16} className="ml-1" />
             </a>
             <p className="text-sm text-gray-600 italic">New Theodora Vanity</p>
@@ -169,7 +169,7 @@ export default function Component() {
               alt="Armchair" 
               className="w-full h-72 object-cover mb-4"
             />
-            <a href="#" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+            <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
               IN-STOCK FURNITURE <ChevronRight size={16} className="ml-1" />
             </a>
             <p className="text-sm text-gray-600 italic">Delivers Within 5 Weeks</p>
@@ -180,7 +180,7 @@ export default function Component() {
               alt="Rug" 
               className="w-full h-72 object-cover mb-4"
             />
-            <a href="#" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+            <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
               RUGS <ChevronRight size={16} className="ml-1" />
             </a>
             <p className="text-sm text-gray-600 italic">New Arrivals</p>
@@ -200,42 +200,42 @@ export default function Component() {
             <div>
               <h3 className="font-bold mb-4">CUSTOMER SERVICE</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:underline">Contact Us</a></li>
-                <li><a href="#" className="hover:underline">Track Your Order</a></li>
-                <li><a href="#" className="hover:underline">Returns & Exchanges</a></li>
-                <li><a href="#" className="hover:underline">Shipping Information</a></li>
-                <li><a href="#" className="hover:underline">Sign Up for Email and Text Updates</a></li>
-                <li><a href="#" className="hover:underline">Site Map</a></li>
-                <li><a href="#" className="hover:underline">Do Not Sell or Share My Personal Information</a></li>
+                <li><a href="/" className="hover:underline">Contact Us</a></li>
+                <li><a href="/" className="hover:underline">Track Your Order</a></li>
+                <li><a href="/" className="hover:underline">Returns & Exchanges</a></li>
+                <li><a href="/" className="hover:underline">Shipping Information</a></li>
+                <li><a href="/" className="hover:underline">Sign Up for Email and Text Updates</a></li>
+                <li><a href="/" className="hover:underline">Site Map</a></li>
+                <li><a href="/" className="hover:underline">Do Not Sell or Share My Personal Information</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-bold mb-4">BUSINESS TO BUSINESS</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:underline">Overview</a></li>
-                <li><a href="#" className="hover:underline">Trade</a></li>
-                <li><a href="#" className="hover:underline">Contract</a></li>
+                <li><a href="/" className="hover:underline">Overview</a></li>
+                <li><a href="/" className="hover:underline">Trade</a></li>
+                <li><a href="/" className="hover:underline">Contract</a></li>
               </ul>
               <h3 className="font-bold mt-6 mb-4">DESIGN CREW</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:underline">Free Design Appointments</a></li>
-                <li><a href="#" className="hover:underline">Book an Appointment</a></li>
+                <li><a href="/" className="hover:underline">Free Design Appointments</a></li>
+                <li><a href="/" className="hover:underline">Book an Appointment</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-bold mb-4">RESOURCES</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:underline">Gift Cards</a></li>
+                <li><a href="/" className="hover:underline">Gift Cards</a></li>
                 <li>
-                  <a href="#" className="hover:underline">View Online Catalog</a>
+                  <a href="/" className="hover:underline">View Online Catalog</a>
                 </li>
-                <li><a href="#" className="hover:underline">Our Blog</a></li>
+                <li><a href="/" className="hover:underline">Our Blog</a></li>
               </ul>
               <h3 className="font-bold mt-6 mb-4">THE KEY REWARDS + CARD</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:underline">Credit Card</a></li>
-                <li><a href="#" className="hover:underline">Manage My Credit Card</a></li>
-                <li><a href="#" className="hover:underline">The Key Rewards</a></li>
+                <li><a href="/" className="hover:underline">Credit Card</a></li>
+                <li><a href="/" className="hover:underline">Manage My Credit Card</a></li>
+                <li><a href="/" className="hover:underline">The Key Rewards</a></li>
               </ul>
             </div>
             <div>
@@ -248,29 +248,29 @@ export default function Component() {
                 </button>
               </form>
               <p className="text-xs mb-4">
-                California residents: can request <a href="#" className="underline">Do Not Sell or Share My Personal Information</a>
+                California residents: can request <a href="/" className="underline">Do Not Sell or Share My Personal Information</a>
               </p>
               <p className="text-xs mb-4">
-                Please visit our <a href="#" className="underline">privacy policy</a> to learn how we can use your information.
+                Please visit our <a href="/" className="underline">privacy policy</a> to learn how we can use your information.
               </p>
               <h3 className="font-bold mb-4">ABOUT US</h3>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:underline">Our Factory</a></li>
-                <li><a href="#" className="hover:underline">Our Commitments</a></li>
-                <li><a href="#" className="hover:underline">Careers</a></li>
-                <li><a href="#" className="hover:underline">Find A Store</a></li>
+                <li><a href="/" className="hover:underline">Our Factory</a></li>
+                <li><a href="/" className="hover:underline">Our Commitments</a></li>
+                <li><a href="/" className="hover:underline">Careers</a></li>
+                <li><a href="/" className="hover:underline">Find A Store</a></li>
               </ul>
             </div>
           </div>
           <div className="flex justify-center space-x-4 mt-8">
-            <a href="#" className="text-gray-600 hover:text-black"><Instagram size={24} /></a>
-            <a href="#" className="text-gray-600 hover:text-black"><Facebook size={24} /></a>
-            <a href="#" className="text-gray-600 hover:text-black"><Youtube size={24} /></a>
+            <a href="/" className="text-gray-600 hover:text-black"><Instagram size={24} /></a>
+            <a href="/" className="text-gray-600 hover:text-black"><Facebook size={24} /></a>
+            <a href="/" className="text-gray-600 hover:text-black"><Youtube size={24} /></a>
           </div>
           <div className="text-center text-xs mt-8">
             <p>© 2024 Williams-Sonoma, Inc. All Rights Reserved</p>
             <p className="mt-2">
-              <a href="#" className="underline">Terms & Conditions</a> | <a href="#" className="underline">Accessibility</a> | <a href="#" className="underline">Privacy Policy</a> | <a href="#" className="underline">Legal Statement</a>
+              <a href="/" className="underline">Terms & Conditions</a> | <a href="/" className="underline">Accessibility</a> | <a href="/" className="underline">Privacy Policy</a> | <a href="/" className="underline">Legal Statement</a>
             </p>
           </div>
         </div>
