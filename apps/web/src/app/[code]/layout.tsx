@@ -6,6 +6,6 @@ export async function generateStaticParams() {
   return codes.map((code) => ({ code }));
 }
 
-export default function Component({ children }: { children: ReactNode }): any {
+export default function Component({ children }: { children: ReactNode }) {
   return children;
 }

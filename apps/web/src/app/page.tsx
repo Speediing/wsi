@@ -22,7 +22,7 @@ export default async function Page({ params }: { params: { code: string } }) {
         <p className="line-clamp-2 sm:line-clamp-1">
           Zero interest promo financing* on purchases of $750 or more.{" "}
           <a href="/" className="underline">
-            Learn More {`${summerSale.valueOf()}`}
+            Learn More {`${summerSale.valueOf()} ${banner.valueOf()} `}
           </a>
         </p>
       </div>
