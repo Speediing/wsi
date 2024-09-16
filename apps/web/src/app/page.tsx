@@ -1,12 +1,15 @@
 import { Search, User, Package, Heart, ShoppingCart, ChevronRight, Instagram, Facebook, Youtube } from 'lucide-react'
+import { showSummerSale } from './flags';
 
-export default function Component() {
+export default async function Component() {
+  const sale = await showSummerSale();
+  console.log(sale)
   return (
     <div className="min-h-screen bg-white">
       {/* Top banner */}
       <div className="bg-gray-600 text-white text-center py-2 text-xs sm:text-sm px-4">
         <p className="line-clamp-2 sm:line-clamp-1">
-          Zero interest promo financing* on purchases of $750 or more. <a href="/" className="underline">Learn More</a>
+          Zero interest promo financing* on purchases of $750 or more. <a href="/" className="underline">Learn More {sale}</a>
         </p>
       </div>
 
@@ -120,7 +123,7 @@ export default function Component() {
       </div>
 
       {/* Hero Image */}
-      <div className="w-full relative overflow-hidden mt-[-70px]" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
+      <div className="w-full relative overflow-hidden mt-[-85px]" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw' }}>
         <iframe 
           src="https://player.vimeo.com/video/1008632929?h=6c7d65625d&background=1" 
           title="Living room with sectional sofa"
@@ -134,64 +137,60 @@ export default function Component() {
 
       {/* New & Featured Section */}
       <section className="container mx-auto px-4 py-12">
-      <h2 className="text-4xl font-serif mb-2 text-gray-800">New & Featured</h2>
-      <p className="text-lg mb-6 text-gray-600">
-        Shop our latest designs—thoughtfully made to complete every room in your home.
-      </p>
-      <hr className="mb-8 border-gray-300" />
-      <div className="relative">
-        <div className="flex space-x-6 overflow-x-auto pb-6 scrollbar-hide">
-          <div className="flex-none w-72">
-            <img 
-              src="/placeholder.svg?height=300&width=300" 
-              alt="Chandelier" 
-              className="w-full h-72 object-cover mb-4"
-            />
-            <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
-              CHANDELIERS <ChevronRight size={16} className="ml-1" />
-            </a>
-            <p className="text-sm text-gray-600 italic">New Fairvale Chandelier</p>
-          </div>
-          <div className="flex-none w-72">
-            <img 
-              src="/placeholder.svg?height=300&width=300" 
-              alt="Bath Vanity" 
-              className="w-full h-72 object-cover mb-4"
-            />
-            <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
-              BATH VANITIES <ChevronRight size={16} className="ml-1" />
-            </a>
-            <p className="text-sm text-gray-600 italic">New Theodora Vanity</p>
-          </div>
-          <div className="flex-none w-72">
-            <img 
-              src="/placeholder.svg?height=300&width=300" 
-              alt="Armchair" 
-              className="w-full h-72 object-cover mb-4"
-            />
-            <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
-              IN-STOCK FURNITURE <ChevronRight size={16} className="ml-1" />
-            </a>
-            <p className="text-sm text-gray-600 italic">Delivers Within 5 Weeks</p>
-          </div>
-          <div className="flex-none w-72">
-            <img 
-              src="/placeholder.svg?height=300&width=300" 
-              alt="Rug" 
-              className="w-full h-72 object-cover mb-4"
-            />
-            <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
-              RUGS <ChevronRight size={16} className="ml-1" />
-            </a>
-            <p className="text-sm text-gray-600 italic">New Arrivals</p>
+        <h2 className="text-4xl font-serif mb-2 text-gray-800">New & Featured</h2>
+        <p className="text-lg mb-6 text-gray-600">
+          Shop our latest designs—thoughtfully made to complete every room in your home.
+        </p>
+        <hr className="mb-8 border-gray-300" />
+        <div className="relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div>
+              <img 
+                src="https://assets.rjimgs.com/rjimgs/rk/images/dp/ecm/202437/2351/001/004.jpg" 
+                alt="Chandelier" 
+                className="w-full h-72 object-cover mb-4"
+              />
+              <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+                CHANDELIERS <ChevronRight size={16} className="ml-1" />
+              </a>
+              <p className="text-sm text-gray-600 italic">New Fairvale Chandelier</p>
+            </div>
+            <div>
+              <img 
+                src="https://assets.rjimgs.com/rjimgs/rk/images/dp/ecm/202437/1435/001/004.jpg" 
+                alt="Bath Vanity" 
+                className="w-full h-72 object-cover mb-4"
+              />
+              <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+                BATH VANITIES <ChevronRight size={16} className="ml-1" />
+              </a>
+              <p className="text-sm text-gray-600 italic">New Theodora Vanity</p>
+            </div>
+            <div>
+              <img 
+                src="https://assets.rjimgs.com/rjimgs/rk/images/dp/ecm/202437/2351/001/006.jpg" 
+                alt="Armchair" 
+                className="w-full h-72 object-cover mb-4"
+              />
+              <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+                IN-STOCK FURNITURE <ChevronRight size={16} className="ml-1" />
+              </a>
+              <p className="text-sm text-gray-600 italic">Delivers Within 5 Weeks</p>
+            </div>
+            <div>
+              <img 
+                src="https://assets.rjimgs.com/rjimgs/rk/images/dp/ecm/202437/1435/001/010.jpg" 
+                alt="Rug" 
+                className="w-full h-72 object-cover mb-4"
+              />
+              <a href="/" className="text-sm font-semibold flex items-center text-gray-800 hover:underline">
+                RUGS <ChevronRight size={16} className="ml-1" />
+              </a>
+              <p className="text-sm text-gray-600 italic">New Arrivals</p>
+            </div>
           </div>
         </div>
-        <div className="absolute right-0 top-0 bottom-6 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
-        <button className="absolute right-2 top-[calc(50%-1.5rem)] transform -translate-y-1/2 bg-white rounded-full p-2  z-10 focus:outline-none">
-          <ChevronRight size={24} className="text-gray-600" />
-        </button>
-      </div>
-    </section>
+      </section>
 
       {/* Footer */}
       <footer className="bg-gray-100 py-8 sm:py-12">
