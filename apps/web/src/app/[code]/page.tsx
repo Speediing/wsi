@@ -19,7 +19,7 @@ export default async function Page({ params }: { params: { code: string } }) {
     <div className="min-h-screen bg-white">
       {/* Top banner */}
       {banner && (
-        <div className="bg-gray-600 text-white text-center py-2 text-xs sm:text-sm px-4">
+        <div className="bg-[#777b7b] text-white text-center py-2 text-xs sm:text-sm px-4">
           <p className="line-clamp-2 sm:line-clamp-1">
             Zero interest promo financing* on purchases of $750 or more.{" "}
             <a href="/" className="underline">
@@ -202,7 +202,7 @@ export default async function Page({ params }: { params: { code: string } }) {
       {/* Promotional Banners */}
       {summerSale && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 text-center">
-          <div className="bg-gray-700 text-white py-4 px-2">
+          <div className="bg-[#4e5044] text-white py-4 px-2">
             <h3 className="font-bold text-sm sm:text-base">
               Fall Savings Up to 40% Off
             </h3>
@@ -211,7 +211,7 @@ export default async function Page({ params }: { params: { code: string } }) {
               <ChevronRight className="inline" size={16} />
             </p>
           </div>
-          <div className="bg-gray-700 text-white py-4 px-2">
+          <div className="bg-[#4e5044] text-white py-4 px-2">
             <h3 className="font-bold text-sm sm:text-base">
               New Arrivals Are Here
             </h3>
@@ -219,7 +219,7 @@ export default async function Page({ params }: { params: { code: string } }) {
               Shop Now <ChevronRight className="inline" size={16} />
             </p>
           </div>
-          <div className="bg-gray-700 text-white py-4 px-2">
+          <div className="bg-[#4e5044] text-white py-4 px-2">
             <h3 className="font-bold text-sm sm:text-base">
               Free Shipping on 100s of Items
             </h3>
@@ -227,7 +227,7 @@ export default async function Page({ params }: { params: { code: string } }) {
               Shop Now <ChevronRight className="inline" size={16} />
             </p>
           </div>
-          <div className="bg-gray-700 text-white py-4 px-2">
+          <div className="bg-[#4e5044] text-white py-4 px-2">
             <h3 className="font-bold text-sm sm:text-base">
               In-Stock and Quick Ship Furniture
             </h3>
