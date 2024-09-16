@@ -9,12 +9,8 @@ import {
   Facebook,
   Youtube,
 } from "lucide-react";
-import { marketingFlags, showSummerSale, showBanner } from "./flags";
 
-export default async function Page({ params }: { params: { code: string } }) {
-  const summerSale = await showSummerSale(params.code, marketingFlags);
-  const banner = await showBanner(params.code, marketingFlags);
-
+export default async function Page() {
   return (
     <div className="min-h-screen bg-white">
       {/* Top banner */}
@@ -22,7 +18,7 @@ export default async function Page({ params }: { params: { code: string } }) {
         <p className="line-clamp-2 sm:line-clamp-1">
           Zero interest promo financing* on purchases of $750 or more.{" "}
           <a href="/" className="underline">
-            Learn More {`${summerSale.valueOf()} ${banner.valueOf()} `}
+            Learn More
           </a>
         </p>
       </div>
