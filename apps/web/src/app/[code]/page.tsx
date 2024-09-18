@@ -31,7 +31,7 @@ export default async function Page({ params }: { params: { code: string } }) {
       {banner && (
         <div className="bg-[#777b7b] text-white text-center py-2 text-xs sm:text-sm px-4">
           <p className="line-clamp-2 sm:line-clamp-1">
-            Zero interest promo financing* on purchases of $750 or more.{" "}
+            Zero interest promo financing* on purchases of $750 or more!{" "}
             <a href="/" className="underline">
               Learn More!
             </a>
