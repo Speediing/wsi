@@ -13,6 +13,8 @@ import { marketingFlags, showSummerSale, showBanner } from "../flags";
 
 import { Playfair_Display } from "next/font/google";
 import { Suspense } from "react";
+import { get } from "@vercel/edge-config";
+import { unstable_cache } from "next/cache";
 // import { Suspense } from "react";
 export const experimental_ppr = true;
 const playfair = Playfair_Display({ subsets: ["latin"] });
@@ -38,6 +40,11 @@ const Account = async () => {
 export default async function Page({ params }: { params: { code: string } }) {
   const summerSale = await showSummerSale(params.code, marketingFlags);
   const banner = await showBanner(params.code, marketingFlags);
+  const featuredText = await unstable_cache(
+    async () => get("featured"),
+    ["featured"]
+  );
+  const featured: any = await featuredText();
 
   return (
     <div className="min-h-screen bg-white">
@@ -314,9 +321,7 @@ export default async function Page({ params }: { params: { code: string } }) {
 
       {/* New & Featured Section */}
       <section className="container mx-auto px-4 py-12">
-        <h2 className="text-4xl font-serif mb-2 text-gray-800">
-          New & Featured
-        </h2>
+        <h2 className="text-4xl font-serif mb-2 text-gray-800">{featured}</h2>
         <p className="text-lg mb-6 text-gray-600">
           Shop our latest designs—thoughtfully made to complete every room in
           your home.
