@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { revalidateTag } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 export async function GET(request: NextRequest) {
   try {
     // Revalidate the "featured" tag
     revalidateTag("featured");
+    revalidatePath("/[code]", "layout");
 
     // Return a JSON response indicating success
     return NextResponse.json(
