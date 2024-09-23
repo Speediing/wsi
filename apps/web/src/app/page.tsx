@@ -12,7 +12,6 @@ import {
 import { Suspense } from "react";
 
 const Account = async () => {
-  await fetch("google.com");
   await new Promise((r) => setTimeout(r, 5000));
   return <span>Jason's Account</span>;
 };
