@@ -5,7 +5,7 @@ import type { ReactNode } from "react";
 //   const codes = await generatePermutations(marketingFlags);
 //   return codes.map((code) => ({ code }));
 // }
-
+export const experimental_ppr = true;
 export default function Component({ children }: { children: ReactNode }) {
   return children;
 }
