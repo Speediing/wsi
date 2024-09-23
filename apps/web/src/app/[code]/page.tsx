@@ -9,6 +9,8 @@ import {
   Facebook,
   Youtube,
 } from "lucide-react";
+import { headers } from "next/headers";
+import { MapPin } from "lucide-react";
 import { marketingFlags, showSummerSale, showBanner } from "../flags";
 
 import { Playfair_Display } from "next/font/google";
@@ -35,6 +37,50 @@ async function getName() {
 const Account = async () => {
   const { name } = await getName();
   return <span>{name} Account</span>;
+};
+
+const UserLocation = () => {
+  const headersList = headers();
+  const city = headersList.get("x-vercel-ip-city") || "Unknown City";
+  const country = headersList.get("x-vercel-ip-country") || "Unknown Country";
+  const region =
+    headersList.get("x-vercel-ip-country-region") || "Unknown Region";
+
+  return (
+    <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md mx-auto">
+      <div className="flex items-center space-x-4 mb-4">
+        <MapPin className="w-8 h-8 text-primary" />
+        <h2 className="text-xl font-semibold">Your Location</h2>
+      </div>
+      <dl className="grid grid-cols-2 gap-2 text-sm">
+        <dt className="font-semibold">City:</dt>
+        <dd>{city}</dd>
+        <dt className="font-semibold">Region:</dt>
+        <dd>{region}</dd>
+        <dt className="font-semibold">Country:</dt>
+        <dd>{country}</dd>
+      </dl>
+    </div>
+  );
+};
+
+const LocationFallback = () => {
+  return (
+    <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md mx-auto">
+      <div className="flex items-center space-x-4 mb-4">
+        <div className="w-8 h-8 bg-gray-200 rounded-full animate-pulse" />
+        <div className="h-6 bg-gray-200 rounded w-1/2 animate-pulse" />
+      </div>
+      <div className="space-y-2">
+        {[...Array(3)].map((_, i) => (
+          <div key={i} className="flex justify-between">
+            <div className="h-4 bg-gray-200 rounded w-1/4 animate-pulse" />
+            <div className="h-4 bg-gray-200 rounded w-1/2 animate-pulse" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default async function Page({ params }: { params: { code: string } }) {
@@ -318,7 +364,9 @@ export default async function Page({ params }: { params: { code: string } }) {
           allowFullScreen
         />
       </div>
-
+      <Suspense fallback={<LocationFallback />}>
+        <UserLocation />
+      </Suspense>
       {/* New & Featured Section */}
       <section className="container mx-auto px-4 py-12">
         <h2 className="text-4xl font-serif mb-2 text-gray-800">{featured}</h2>
