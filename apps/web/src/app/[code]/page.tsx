@@ -14,7 +14,7 @@ import { marketingFlags, showSummerSale, showBanner } from "../flags";
 import { Playfair_Display } from "next/font/google";
 import { Suspense } from "react";
 // import { Suspense } from "react";
-
+export const experimental_ppr = true;
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
 const Account = async () => {
