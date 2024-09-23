@@ -7,7 +7,7 @@ module.exports = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  // experimental: {
-  //   ppr: 'incremental',
-  // },
+  experimental: {
+    ppr: 'incremental',
+  },
 };

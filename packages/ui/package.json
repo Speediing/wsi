@@ -19,7 +19,7 @@
     "type-check": "tsc --noEmit"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+     "react": "canary"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

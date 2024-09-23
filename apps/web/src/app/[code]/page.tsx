@@ -12,13 +12,27 @@ import {
 import { marketingFlags, showSummerSale, showBanner } from "../flags";
 
 import { Playfair_Display } from "next/font/google";
+import { Suspense } from "react";
 // import { Suspense } from "react";
-
+export const experimental_ppr = true;
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
+async function getName() {
+  const apiUrl = process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}/api/name`
+    : "http://localhost:3000/api/name";
+
+  const res = await fetch(apiUrl, { cache: "no-store" });
+  if (!res.ok) {
+    console.log(res);
+    throw new Error("Failed to fetch name");
+  }
+  return res.json();
+}
+
 const Account = async () => {
-  await new Promise((r) => setTimeout(r, 2000));
-  return <span>Jason's Account</span>;
+  const { name } = await getName();
+  return <span>{name} Account</span>;
 };
 
 export default async function Page({ params }: { params: { code: string } }) {
@@ -78,10 +92,10 @@ export default async function Page({ params }: { params: { code: string } }) {
                 className="flex flex-col items-center text-xs w-16 text-center"
               >
                 <User size={20} className="mb-1" />
-                {/* <Suspense fallback={<span>Loading</span>}>
+                <Suspense fallback={<span>Loading</span>}>
                   <Account />
-                </Suspense> */}
-                <span>Account</span>
+                </Suspense>
+                {/* <span>Account</span> */}
               </a>
               <a
                 href="/"
