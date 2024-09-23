@@ -9,7 +9,15 @@ import {
   Facebook,
   Youtube,
 } from "lucide-react";
+import { Suspense } from "react";
 
+const Account = async () => {
+  await fetch("google.com");
+  await new Promise((r) => setTimeout(r, 5000));
+  return <span>Jason's Account</span>;
+};
+
+export const experimental_ppr = true;
 export default async function Page() {
   return (
     <div className="min-h-screen bg-white">
@@ -44,8 +52,9 @@ export default async function Page() {
             </h1>
             <div className="w-1/4 flex justify-end space-x-6">
               <a href="/" className="flex flex-col items-center text-xs">
-                <User size={20} className="mb-1" />
-                <span>Account</span>
+                <Suspense fallback={<span>Loading</span>}>
+                  <Account />
+                </Suspense>
               </a>
               <a href="/" className="flex flex-col items-center text-xs">
                 <Package size={20} className="mb-1" />
