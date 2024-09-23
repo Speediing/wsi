@@ -18,7 +18,6 @@ export const experimental_ppr = true;
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
 const Account = async () => {
-  await fetch("https://www.google.com");
   await new Promise((r) => setTimeout(r, 5000));
   return <span>Jason's Account</span>;
 };
