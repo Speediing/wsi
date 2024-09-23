@@ -18,7 +18,7 @@ import { Suspense } from "react";
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
 const Account = async () => {
-  await new Promise((r) => setTimeout(r, 2000));
+  await new Promise((r) => setTimeout(r, 5000));
   return <span>Jason's Account</span>;
 };
 
@@ -82,7 +82,7 @@ export default async function Page({ params }: { params: { code: string } }) {
                 <Suspense fallback={<span>Loading</span>}>
                   <Account />
                 </Suspense>
-                <span>Account</span>
+                {/* <span>Account</span> */}
               </a>
               <a
                 href="/"
