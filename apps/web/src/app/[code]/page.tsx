@@ -24,6 +24,7 @@ async function getName() {
 
   const res = await fetch(apiUrl, { cache: "no-store" });
   if (!res.ok) {
+    console.log(res);
     throw new Error("Failed to fetch name");
   }
   return res.json();
@@ -31,7 +32,6 @@ async function getName() {
 
 const Account = async () => {
   const { name } = await getName();
-
   return <span>{name} Account</span>;
 };
 
