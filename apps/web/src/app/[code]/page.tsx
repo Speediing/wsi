@@ -13,6 +13,7 @@ import { marketingFlags, showSummerSale, showBanner } from "../flags";
 
 import { Playfair_Display } from "next/font/google";
 import { Suspense } from "react";
+import { get } from "@vercel/edge-config";
 // import { Suspense } from "react";
 export const experimental_ppr = true;
 const playfair = Playfair_Display({ subsets: ["latin"] });
@@ -38,7 +39,7 @@ const Account = async () => {
 export default async function Page({ params }: { params: { code: string } }) {
   const summerSale = await showSummerSale(params.code, marketingFlags);
   const banner = await showBanner(params.code, marketingFlags);
-
+  const banner = await get("banner");
   return (
     <div className="min-h-screen bg-white">
       {/* Top banner */}
