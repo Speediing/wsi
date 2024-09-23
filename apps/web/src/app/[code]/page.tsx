@@ -12,6 +12,7 @@ import {
 import { marketingFlags, showSummerSale, showBanner } from "../flags";
 
 import { Playfair_Display } from "next/font/google";
+import { Suspense } from "react";
 // import { Suspense } from "react";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
@@ -78,9 +79,9 @@ export default async function Page({ params }: { params: { code: string } }) {
                 className="flex flex-col items-center text-xs w-16 text-center"
               >
                 <User size={20} className="mb-1" />
-                {/* <Suspense fallback={<span>Loading</span>}>
+                <Suspense fallback={<span>Loading</span>}>
                   <Account />
-                </Suspense> */}
+                </Suspense>
                 <span>Account</span>
               </a>
               <a
