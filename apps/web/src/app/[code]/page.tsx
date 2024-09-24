@@ -8,6 +8,7 @@ import {
   Instagram,
   Facebook,
   Youtube,
+  MenuIcon,
 } from "lucide-react";
 import { marketingFlags, showSummerSale, showBanner } from "../flags";
 
@@ -15,10 +16,31 @@ import { Playfair_Display } from "next/font/google";
 import { Suspense } from "react";
 import { get } from "@vercel/edge-config";
 import { unstable_cache } from "next/cache";
+import Link from "next/link";
 // import { Suspense } from "react";
 export const experimental_ppr = true;
 const playfair = Playfair_Display({ subsets: ["latin"] });
+function LocationFallback() {
+  return (
+    <span className="text-sm text-muted-foreground">Loading location...</span>
+  );
+}
+import { headers } from "next/headers";
 
+export async function GetLocation() {
+  const headersList = headers();
+  const country = headersList.get("x-vercel-ip-country") || "Unknown";
+  const city = headersList.get("x-vercel-ip-city") || "Unknown";
+
+  // Simulate a delay to demonstrate the Suspense fallback
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  return (
+    <span className="text-sm text-muted-foreground">
+      {city}, {country}
+    </span>
+  );
+}
 async function getName() {
   const apiUrl = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}/api/name`
@@ -161,7 +183,51 @@ export default async function Page({ params }: { params: { code: string } }) {
           </button>
         </div>
       </header>
-
+      <nav className="bg-background border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center">
+              <Link href="/" className="flex-shrink-0">
+                <span className="text-xl font-bold">MyApp</span>
+              </Link>
+              <div className="hidden md:block">
+                <div className="ml-10 flex items-baseline space-x-4">
+                  <Link
+                    href="/"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    About
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  >
+                    Contact
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <div className="ml-4 flex items-center md:ml-6">
+                <Suspense fallback={<LocationFallback />}>
+                  <GetLocation />
+                </Suspense>
+              </div>
+            </div>
+            <div className="md:hidden">
+              <button aria-label="Open menu">
+                <MenuIcon className="h-6 w-6" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
       {/* Navigation */}
       <nav className="border-t border-b overflow-x-auto">
         <ul className="flex justify-start sm:justify-center space-x-6 py-4 text-sm px-4 sm:px-0 whitespace-nowrap">
