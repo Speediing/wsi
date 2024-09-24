@@ -27,7 +27,7 @@ function LocationFallback() {
 }
 import { headers } from "next/headers";
 
-export async function GetLocation() {
+const GetLocation = async () => {
   const headersList = headers();
   const country = headersList.get("x-vercel-ip-country") || "Unknown";
   const city = headersList.get("x-vercel-ip-city") || "Unknown";
@@ -40,7 +40,7 @@ export async function GetLocation() {
       {city}, {country}
     </span>
   );
-}
+};
 async function getName() {
   const apiUrl = process.env.VERCEL_URL
     ? `https://${process.env.VERCEL_URL}/api/name`
